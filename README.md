@@ -1,4 +1,7 @@
 # SIMAKS
+![alt text](https://drive.google.com/file/d/1y8pRGH88Ssjb7qmJNqTTxP1hRKTJjApk/view?usp=sharing?raw=true)
+
+
 Sistem Informasi Manajemen Keuangan Sekolah
 
 <p>Sistem Informasi Manajemen Keuangan Sekolah ini merupakan sistem yang dipakai untuk mengontrol keuangan sekolah dengan custom sesuai dengan permintaan sekolah
