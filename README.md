@@ -41,4 +41,4 @@ Sistem Informasi Manajemen Keuangan Sekolah
 
 Sekian, Semoga Membantu.. :)
 
-thanks to https://www.youtube.com/@abidtaufiqurr8753
+thanks to Abid Taufiqur R
