@@ -1340,52 +1340,55 @@ protected function _parsepngstream($f, $file)
 	}
 	while($n);
 
-	if($colspace=='Indexed' && empty($pal))
-		$this->Error('Missing palette in '.$file);
-	$info = array('w'=>$w, 'h'=>$h, 'cs'=>$colspace, 'bpc'=>$bpc, 'f'=>'FlateDecode', 'dp'=>$dp, 'pal'=>$pal, 'trns'=>$trns);
-	if($ct>=4)
-	{
+	if ($colspace == 'Indexed' && empty($pal)) {
+		$this->Error('Missing palette in ' . $file);
+	}
+	
+	$info = array('w' => $w, 'h' => $h, 'cs' => $colspace, 'bpc' => $bpc, 'f' => 'FlateDecode', 'dp' => $dp, 'pal' => $pal, 'trns' => $trns);
+	
+	if ($ct >= 4) {
 		// Extract alpha channel
-		if(!function_exists('gzuncompress'))
-			$this->Error('Zlib not available, can\'t handle alpha channel: '.$file);
-		$data = gzuncompress($data);
+		if (!function_exists('gzopen')) {
+			$this->Error('Zlib not available, can\'t handle alpha channel: ' . $file);
+		}
+		
+		$data = gzopen($file, 'rb');
 		$color = '';
 		$alpha = '';
-		if($ct==4)
-		{
+	
+		if ($ct == 4) {
 			// Gray image
-			$len = 2*$w;
-			for($i=0;$i<$h;$i++)
-			{
-				$pos = (1+$len)*$i;
-				$color .= $data[$pos];
-				$alpha .= $data[$pos];
-				$line = substr($data,$pos+1,$len);
-				$color .= preg_replace('/(.)./s','$1',$line);
-				$alpha .= preg_replace('/.(.)/s','$1',$line);
+			$len = 2 * $w;
+			for ($i = 0; $i < $h; $i++) {
+				$line = gzgets($data, $len + 1);
+				$color .= $line[0];
+				$alpha .= $line[0];
+				$color .= preg_replace('/(.)/s', '$1', substr($line, 1));
+				$alpha .= preg_replace('/(.)/s', '$1', substr($line, 1));
 			}
-		}
-		else
-		{
+		} else {
 			// RGB image
-			$len = 4*$w;
-			for($i=0;$i<$h;$i++)
-			{
-				$pos = (1+$len)*$i;
-				$color .= $data[$pos];
-				$alpha .= $data[$pos];
-				$line = substr($data,$pos+1,$len);
-				$color .= preg_replace('/(.{3})./s','$1',$line);
-				$alpha .= preg_replace('/.{3}(.)/s','$1',$line);
+			$len = 4 * $w;
+			for ($i = 0; $i < $h; $i++) {
+				$line = gzgets($data, $len + 1);
+				$color .= $line[0];
+				$alpha .= $line[0];
+				$color .= preg_replace('/(.{3})/s', '$1', substr($line, 1));
+				$alpha .= preg_replace('/.{3}(.)/s', '$1', substr($line, 1));
 			}
 		}
-		unset($data);
+		gzclose($data);
+	
+		// Compress color and alpha data
 		$data = gzcompress($color);
 		$info['smask'] = gzcompress($alpha);
 		$this->WithAlpha = true;
-		if($this->PDFVersion<'1.4')
+	
+		if ($this->PDFVersion < '1.4') {
 			$this->PDFVersion = '1.4';
+		}
 	}
+	
 	$info['data'] = $data;
 	return $info;
 }

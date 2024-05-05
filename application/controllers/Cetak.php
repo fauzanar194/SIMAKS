@@ -44,7 +44,7 @@ class Cetak extends CI_Controller{
        
        $pdf->Cell(3,5,'',0,1);
        // $pdf->Image(base_url().'/assets/dist/img/j.png', 177, 10,29);
-       $pdf->Image(base_url().'/assets/dist/img/logo simaks.png', 2, 10,33);
+       $pdf->Image(base_url().'/assets/dist/img/logo_simaks.png', 2, 10,33);
        $pdf->Cell(3,-5,'',0,1);
        $pdf->SetFont('TIMES','B',14);
        $pdf->Cell(189, 5, 'SIMAKS', 0, 1, 'C');
@@ -166,7 +166,7 @@ foreach($data['pengeluaran'] as $r){
        
        $pdf->Cell(3,5,'',0,1);
        // $pdf->Image(base_url().'/assets/dist/img/j.png', 177, 10,29);
-       $pdf->Image(base_url().'/assets/dist/img/logo simaks.png', 2, 10,33);
+       $pdf->Image(base_url().'/assets/dist/img/logo_simaks.png', 2, 10,33);
        $pdf->Cell(3,-5,'',0,1);
        $pdf->SetFont('TIMES','B',14);
        $pdf->Cell(189, 5, 'SIMAKS', 0, 1, 'C');

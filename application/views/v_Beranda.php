@@ -52,7 +52,7 @@ $Keluar = $g['saldo_awal'] + $g['kas_masuk'] - $g['kas_keluar'];
         <div class="box-body text-center">
             <div class="jumbotron jumbotron-fluid" style="background-color:white;">
                 <div class="container">
-                 	<img style="width: 15%" src="<?=base_url('assets/dist/img/logo simaks.png')?>">
+                 	<img style="width: 15%" src="<?=base_url('assets/dist/img/logo_simaks.png')?>">
                     <h2 class="display-4" style="color:#0066ff;">Sistem Informasi Manajemen Keuangan Sekolah</h2>
                 </div>
             </div>

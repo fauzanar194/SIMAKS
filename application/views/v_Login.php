@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/')?>bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('assets/')?>dist/css/AdminLTE.min.css">
-  <link rel="shorcut icon" type="text/css" href="<?php echo base_url('assets/dist/img/logo simaks.png')?>">
+  <link rel="shorcut icon" type="text/css" href="<?php echo base_url('assets/dist/img/logo_simaks.png')?>">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -22,7 +22,7 @@
 <body style="background-color: #66a3ff " class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <img style="width: 40%" src="<?=base_url('assets/dist/img/logo simaks.png')?>">
+    <img style="width: 40%" src="<?=base_url('assets/dist/img/logo_simaks.png')?>">
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
