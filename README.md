@@ -1,5 +1,6 @@
 # SIMAKS
 
+![Poster 1](https://github.com/fauzanar194/SIMAKS/assets/115679226/b55aa11d-b269-4ff1-9ce6-f17c941dacc4)
 
 Sistem Informasi Manajemen Keuangan Sekolah
 
