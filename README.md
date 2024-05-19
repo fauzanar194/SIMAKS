@@ -38,7 +38,3 @@ Sistem Informasi Manajemen Keuangan Sekolah
 <li>Grafik Uang Masuk dan Keluar</li>
 <li>Crud Ajax dengan JQuery Validation</li>
 </ol>
-
-Sekian, Semoga Membantu.. :)
-
-thanks to Abid Taufiqur R
